@@ -1,0 +1,50 @@
+---
+title: "Untitled"
+author: "Vesa Kauppinen"
+date: "27 May 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## City of Iisalmi, Finland
+
+This is a map of Iisalmi and some of its most famous sites. (Created 27 May 2020)
+
+```{r cars, echo =FALSE, message =FALSE}
+library(leaflet)
+library(dplyr)
+library(Hmisc)
+
+latThai= 63.563062
+longThai =27.188479
+latOlvi = 63.5521871
+longOlvi = 27.1827078
+latKuappi = 63.5545119
+longKuappi = 27.1834905
+
+m<-leaflet() %>%
+        addTiles() %>%
+      
+        addMarkers(
+                   lat = latThai,
+                   lng = longThai,
+                   
+                   popup = "thai massage") %>%
+        addMarkers(
+                lat = latOlvi,
+                lng = longOlvi,
+                
+                popup = "Olvi brewery") %>%
+        addMarkers(
+                lat = latKuappi,
+                lng = longKuappi,
+        
+                 popup = "World's smallest restaurant Kuappi")
+        
+m
+```
+
+
